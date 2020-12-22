@@ -45,4 +45,18 @@ public class UserValidationTest {
         Boolean email=userValidation.emailIdValidate("Rajas@#333dongre@live.com");
         Assert.assertEquals(false,email);
     }
+
+    @Test
+    public void givenMobileNo_WhenProper_ShouldReturnTrue() {
+        UserValidation userValidation=new UserValidation();
+        Boolean mobile=userValidation.mobileValidate("+918286054654");
+        Assert.assertEquals(true,mobile);
+    }
+
+    @Test
+    public void givenMobileNo_WhenNotProper_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean mobile=userValidation.mobileValidate("+9182860546543");
+        Assert.assertEquals(false,mobile);
+    }
 }
