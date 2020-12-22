@@ -59,4 +59,18 @@ public class UserValidationTest {
         Boolean mobile=userValidation.mobileValidate("+9182860546543");
         Assert.assertEquals(false,mobile);
     }
+
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        UserValidation userValidation=new UserValidation();
+        Boolean password=userValidation.passwordValidate("Rajas@1234");
+        Assert.assertEquals(true,password);
+    }
+
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean password=userValidation.passwordValidate("Rajas@Dongre");
+        Assert.assertEquals(false,password);
+    }
 }
