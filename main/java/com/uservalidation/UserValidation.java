@@ -12,4 +12,9 @@ public class UserValidation {
         return pattern.matcher(fName).matches();
 
     }
+    public static boolean lastNameValidate(String lName){
+
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        return pattern.matcher(lName).matches();
+    }
 }
