@@ -73,4 +73,39 @@ public class UserValidationTest {
         Boolean password=userValidation.passwordValidate("Rajas@Dongre");
         Assert.assertEquals(false,password);
     }
+
+    @Test
+    public void givenFirstName_WhenNull_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean firstName = userValidation.firstNameValidate(null);
+        Assert.assertEquals(false,firstName);
+    }
+
+    @Test
+    public void givenLastName_WhenNull_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean lastName= userValidation.lastNameValidate(null);
+        Assert.assertEquals(false,lastName);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenNull_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean mobile= userValidation.mobileValidate(null);
+        Assert.assertEquals(false,mobile);
+    }
+
+    @Test
+    public void givenEmailId_WhenNull_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean email= userValidation.emailIdValidate(null);
+        Assert.assertEquals(false,email);
+    }
+
+    @Test
+    public void givenPassword_WhenNull_ShouldReturnFalse() {
+        UserValidation userValidation=new UserValidation();
+        Boolean password= userValidation.passwordValidate(null);
+        Assert.assertEquals(false,password);
+    }
 }

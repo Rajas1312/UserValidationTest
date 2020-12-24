@@ -10,30 +10,55 @@ public class UserValidation {
     public static final String PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9\\W]{8,}$";
 
     public static boolean firstNameValidate(String fName){
+        try {
+            Pattern pattern = Pattern.compile(NAME_PATTERN);
+            return pattern.matcher(fName).matches();
+        }catch(Throwable t){
+            System.out.println("Invalid input");
+            return false;
 
-        Pattern pattern = Pattern.compile(NAME_PATTERN);
-        return pattern.matcher(fName).matches();
+        }
 
     }
     public static boolean lastNameValidate(String lName){
+        try{
+            Pattern pattern = Pattern.compile(NAME_PATTERN);
+            return pattern.matcher(lName).matches();
+        }catch(Throwable t) {
+            System.out.println("Invalid input");
+            return false;
+        }
 
-        Pattern pattern = Pattern.compile(NAME_PATTERN);
-        return pattern.matcher(lName).matches();
     }
     public static boolean emailIdValidate(String email){
+        try{
+            Pattern pattern = Pattern.compile((EMAIL_PATTERN));
+            return  pattern.matcher(email).matches();
+        }catch(Throwable t) {
+            System.out.println("Invalid input");
+            return false;
+        }
 
-        Pattern pattern = Pattern.compile((EMAIL_PATTERN));
-        return  pattern.matcher(email).matches();
     }
     public static boolean mobileValidate(String mobile){
+        try{
+            Pattern pattern = Pattern.compile(MOBILE_PATTERN);
+            return  pattern.matcher(mobile).matches();
+        }catch(Throwable t) {
+            System.out.println("Invalid input");
+            return false;
+        }
 
-        Pattern pattern = Pattern.compile(MOBILE_PATTERN);
-        return  pattern.matcher(mobile).matches();
     }
     public static boolean passwordValidate(String password){
+        try{
+            Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+            return pattern.matcher(password).matches();
+        }catch(Throwable t) {
+            System.out.println("Invalid input");
+            return false;
+        }
 
-        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
-        return pattern.matcher(password).matches();
     }
 
 }
