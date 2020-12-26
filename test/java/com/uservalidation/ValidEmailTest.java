@@ -27,7 +27,7 @@ public class ValidEmailTest {
     @Test
     public void givenEmail_WhenProperOrImproper_ShouldReturnTrueOrFalse() {
         UserValidation userValidation = new UserValidation();
-        boolean result=userValidation.emailIdValidate(this.emailCheck);
+        boolean result=userValidation.emailId.setPattern(this.emailCheck);
         Assert.assertEquals(this.expectedResult,result);
     }
 }
